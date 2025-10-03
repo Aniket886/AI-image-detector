@@ -52,7 +52,7 @@ A powerful, web-based AI image detector that can identify AI-generated images an
    ```
 
 3. **Open in browser**
-   Navigate to `https://aniket886.github.io/AI-image-detector/`
+   Navigate to https://aniket886.github.io/AI-image-detector/
 
 ## 🎯 How It Works
 
