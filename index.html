@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DRAVIDA - AI Image Detector | Identify AI Generated Images</title>
+    <meta name="description" content="DRAVIDA AI Image Detector - Powerful tool to identify AI-generated images, deepfakes, and manipulated content. Free, accurate, and easy to use.">
+    <link rel="icon" type="image/x-icon" href="logo/favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-container">
+                <div class="nav-brand">
+                    <img src="logo/cd.jpg" alt="DRAVIDA Logo" class="logo">
+                    <span class="brand-name">DRAVIDA</span>
+                </div>
+                <div class="nav-menu">
+                    <a href="#home" class="nav-link">Home</a>
+                    <a href="#detector" class="nav-link">Detector</a>
+                    <a href="#features" class="nav-link">Features</a>
+                    <a href="#faq" class="nav-link">FAQ</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">AI Image Detector</h1>
+                <p class="hero-subtitle">Identify AI-Generated Images & Deepfakes</p>
+                <p class="hero-description">
+                    Built for Truth-Seekers in a Digital World Full of Fakes. DRAVIDA is a powerful tool designed to help users, businesses, and professionals accurately identify AI-generated images, ensuring authenticity and preventing digital fraud.
+                </p>
+                <a href="#detector" class="cta-button">
+                    <i class="fas fa-search"></i>
+                    Start Detection
+                </a>
+            </div>
+            <div class="hero-visual">
+                <div class="detection-preview">
+                    <div class="preview-card">
+                        <i class="fas fa-robot"></i>
+                        <span>AI Generated</span>
+                    </div>
+                    <div class="preview-card">
+                        <i class="fas fa-user"></i>
+                        <span>Human Made</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Detector Section -->
+    <section id="detector" class="detector-section">
+        <div class="container">
+            <div class="detector-header">
+                <h2>Upload Image for AI Detection</h2>
+                <p>Supports JPEG, PNG, GIF, BMP formats. Get results in seconds.</p>
+            </div>
+            
+            <div class="detector-container">
+                <div class="upload-area" id="uploadArea">
+                    <div class="upload-content">
+                        <i class="fas fa-cloud-upload-alt upload-icon"></i>
+                        <h3>Drop your image here or click to browse</h3>
+                        <p>Maximum file size: 10MB</p>
+                        <input type="file" id="imageInput" accept="image/*" hidden>
+                        <button class="upload-btn" onclick="document.getElementById('imageInput').click()">
+                            Choose File
+                        </button>
+                    </div>
+                </div>
+
+                <div class="result-container" id="resultContainer" style="display: none;">
+                    <div class="image-preview">
+                        <img id="previewImage" src="" alt="Uploaded image">
+                    </div>
+                    <div class="detection-result">
+                        <div class="result-header">
+                            <h3>Detection Result</h3>
+                            <div class="confidence-badge" id="confidenceBadge">
+                                <span id="confidenceText">Analyzing...</span>
+                            </div>
+                        </div>
+                        <div class="result-details">
+                            <div class="result-item">
+                                <span class="label">Status:</span>
+                                <span class="value" id="detectionStatus">Processing...</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="label">Confidence:</span>
+                                <span class="value" id="confidenceValue">-</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="label">Analysis Time:</span>
+                                <span class="value" id="analysisTime">-</span>
+                            </div>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="progressFill"></div>
+                        </div>
+                        <button class="analyze-again-btn" onclick="resetDetector()">
+                            <i class="fas fa-redo"></i>
+                            Analyze Another Image
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <h2>Why Choose DRAVIDA?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>High Accuracy</h3>
+                    <p>Based on a dataset trained on 10,000,000 images with very high accuracy detection rates.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Lightning Fast</h3>
+                    <p>Get detection results in just a few seconds with our optimized AI algorithms.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-free-code-camp"></i>
+                    </div>
+                    <h3>100% Free</h3>
+                    <p>No registration required. Try our AI image detector for free without any limitations.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-images"></i>
+                    </div>
+                    <h3>Multiple Formats</h3>
+                    <p>Supports JPEG, PNG, GIF, BMP and other standard image formats.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>Advanced AI</h3>
+                    <p>Detects images from Midjourney, Stable Diffusion, DALL-E, Flux and other AI generators.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-user-secret"></i>
+                    </div>
+                    <h3>Privacy Focused</h3>
+                    <p>Your images are processed securely and not stored on our servers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="use-cases-section">
+        <div class="container">
+            <h2>Who Uses DRAVIDA?</h2>
+            <div class="use-cases-grid">
+                <div class="use-case-card">
+                    <i class="fas fa-share-alt"></i>
+                    <h3>Social Media Moderators</h3>
+                    <p>Identify AI-generated or altered images, remove misleading content and fake profiles, enhance platform trust and safety.</p>
+                </div>
+                <div class="use-case-card">
+                    <i class="fas fa-shopping-cart"></i>
+                    <h3>E-Commerce Businesses</h3>
+                    <p>Verify real product images, reduce fraud and boost customer trust in product authenticity.</p>
+                </div>
+                <div class="use-case-card">
+                    <i class="fas fa-palette"></i>
+                    <h3>Artists and Creators</h3>
+                    <p>Distinguish human-made works from AI-generated ones, preserve originality and ensure proper attribution.</p>
+                </div>
+                <div class="use-case-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h3>Educators</h3>
+                    <p>Verify originality of student-submitted visuals, prevent use of AI-generated content, uphold academic integrity.</p>
+                </div>
+                <div class="use-case-card">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Legal Professionals</h3>
+                    <p>Verify authenticity of visual evidence, detect manipulated images, ensure reliable evidence in proceedings.</p>
+                </div>
+                <div class="use-case-card">
+                    <i class="fas fa-newspaper"></i>
+                    <h3>Journalists</h3>
+                    <p>Verify photo authenticity before publishing, prevent spread of deepfakes, protect media credibility.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq-section">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What is DRAVIDA AI Image Detector?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>DRAVIDA AI Image Detector is a free AI-generated image detection tool. Our AI can efficiently and accurately determine whether an image is generated by AI, identify AI artworks, and detect fake avatars or composite photos.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>How accurate is the detection?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our AI Image Detector is based on a dataset trained on 10,000,000 images. The accuracy is very high, but no tool is 100% foolproof. Accuracy may vary depending on the complexity and quality of the image.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Is it really free to use?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, our AI-generated Image Detector is completely free and can be tried without logging in or purchasing credits.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>What image formats are supported?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>DRAVIDA AI Image Detector can recognize any standard image file format, including JPEG, PNG, GIF, BMP, and more.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Which AI generators can it detect?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Our AI Image Detector is designed to identify a variety of AI-generated images, including those from Midjourney, Stable Diffusion, DALL-E, Flux, and many other popular AI image generators.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">
+                        <h3>Can it detect edited AI images?</h3>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Yes, DRAVIDA's AI-generated Image Detector can accurately detect AI-generated avatars and edited images. Even with some post-processing, it still recognizes AI patterns well, though extreme edits may slightly affect accuracy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <img src="logo/cd.jpg" alt="DRAVIDA Logo" class="footer-logo">
+                    <span class="footer-brand-name">DRAVIDA</span>
+                    <p>Advanced AI Image Detection Technology</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-section">
+                        <h4>Product</h4>
+                        <a href="#detector">AI Detector</a>
+                        <a href="#features">Features</a>
+                        <a href="#faq">FAQ</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Use Cases</h4>
+                        <a href="#features">Social Media</a>
+                        <a href="#features">E-Commerce</a>
+                        <a href="#features">Education</a>
+                        <a href="#features">Legal</a>
+                    </div>
+                    <div class="footer-section">
+                        <h4>Support</h4>
+                        <a href="#faq">Help Center</a>
+                        <a href="#contact">Contact</a>
+                        <a href="#privacy">Privacy Policy</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 DRAVIDA. All rights reserved. Built for truth-seekers in a digital world.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="ai-detector.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
