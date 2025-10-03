@@ -28,9 +28,7 @@ A powerful, web-based AI image detector that can identify AI-generated images an
 ├── logo/
 │   ├── cd.jpg          # Project logo
 │   └── favicon.ico     # Website favicon
-└── testai/
-    ├── aigen.jpg       # AI-generated test image
-    └── og.jpg          # Original test image
+
 ```
 
 ## 🔧 Installation & Setup
